@@ -10,13 +10,13 @@
         return this.each(function() {
             var select = $(this),
                 val = select.find(":selected"),
-                name = select.attr('id'),
+                name = select.prop('id'),
                 o = options,
                 label, time;
           if(typeof name === 'undefined'){
             time =  new Date();
             name = 'select-id-' + time.getTime();
-            select.attr('id', name);
+            select.prop('id', name);
           }
           select.addClass(o.selClass).after('<label class="'+o.labelClass+'" for="' + name + '">'+val.text()+'</label>');
           label = select.next();
